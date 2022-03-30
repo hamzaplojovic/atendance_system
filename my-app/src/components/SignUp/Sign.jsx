@@ -1,4 +1,5 @@
 import React from "react";
+import "./Sign.css";
 
 const submitHandler = (e) => {
     e.preventDefault();
@@ -9,31 +10,29 @@ const submitHandler = (e) => {
 
     for (var x = 0; x < Object.values(users).length; x++) {
         if (
-            document.getElementById("username").value ==
-                Object.values(users)[0]["username"] &&
-            document.getElementById("password").value ==
-                Object.values(users)[0]["password"]
+            document.getElementById("username").value ===
+                Object.values(users)[x]["username"] &&
+            document.getElementById("password").value ===
+                Object.values(users)[x]["password"]
         ) {
-            console.log("HI");
-            break;
+            window.open("https://google.com");
+        } else {
+            document.location.reload(true);
         }
-    }
-    if (1 == 1) {
-        // if ("hamzaplojovic" == document.getElementById("username").value) {
-        //     console.log("HI");
-        // }
     }
 };
 
 function SignIn() {
     return (
-        <form action="">
-            <label htmlFor="username">Enter your usename: </label>
-            <input type="text" id="username" />
-            <label htmlFor="password">Enter your password: </label>
-            <input type="text" id="password" />
-            <button onClick={submitHandler}>Submit</button>
-        </form>
+        <div className="main">
+            <form action="">
+                <label htmlFor="username">Enter your usename: </label>
+                <input type="text" id="username" />
+                <label htmlFor="password">Enter your password: </label>
+                <input type="text" id="password" />
+                <button onClick={submitHandler}>Submit</button>
+            </form>
+        </div>
     );
 }
 
