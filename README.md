@@ -1,3 +1,3 @@
 # Attendance Menagment System
 
-React application that can work as attentance menagment tool.
+React application that can work as attentance menagement tool.
