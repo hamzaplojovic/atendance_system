@@ -31,7 +31,7 @@ const submitHandler = (e) => {
                 document.getElementById("username").value
             );
             localStorage.setItem("students", Array(students));
-            document.querySelector("div.main").style.display = "block";
+            document.querySelector("div.main").style.display = "flex";
             document.querySelector("div.sign").style.display = "none";
         } else if (
             document.getElementById("password").value !==

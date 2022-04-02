@@ -7,7 +7,9 @@ const Divs = () => {
         string = string + x;
     }
     for (let index = 0; index < string.split(",").length; index++) {
-        var heading = document.body.appendChild(document.createElement("h1"));
+        var heading = document
+            .getElementById("main")
+            .appendChild(document.createElement("h1"));
         heading.innerText = string.split(",")[index];
     }
     document.getElementById("button").style.display = "none";
@@ -15,7 +17,7 @@ const Divs = () => {
 
 function Main() {
     return (
-        <div className="main">
+        <div className="main" id="main">
             <button onClick={Divs} id="button">
                 Generate
             </button>
