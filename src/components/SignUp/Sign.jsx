@@ -3,8 +3,6 @@ import "./Sign.css";
 import file from "./FIle";
 
 const submitHandler = (e) => {
-    console.clear();
-
     e.preventDefault();
     var students = [];
     var users = {
@@ -19,7 +17,6 @@ const submitHandler = (e) => {
             document.getElementById("password").value ===
                 Object.values(users)[x]["password"]
         ) {
-            console.clear();
             for (const key in file.data["users"][
                 document.getElementById("username").value
             ]) {
@@ -29,12 +26,11 @@ const submitHandler = (e) => {
                     ][key]
                 );
             }
-
-            console.log(students);
             localStorage.setItem(
                 "username",
                 document.getElementById("username").value
             );
+            localStorage.setItem("students", Array(students));
             document.querySelector("div.main").style.display = "block";
             document.querySelector("div.sign").style.display = "none";
         } else if (
