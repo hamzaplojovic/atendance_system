@@ -3,6 +3,8 @@ import "./Sign.css";
 import file from "./FIle";
 
 const submitHandler = (e) => {
+    console.clear();
+
     e.preventDefault();
     var students = [];
     var users = {
@@ -17,10 +19,6 @@ const submitHandler = (e) => {
             document.getElementById("password").value ===
                 Object.values(users)[x]["password"]
         ) {
-            localStorage.setItem(
-                "user",
-                document.getElementById("username").value
-            );
             console.clear();
             for (const key in file.data["users"][
                 document.getElementById("username").value
@@ -31,9 +29,16 @@ const submitHandler = (e) => {
                     ][key]
                 );
             }
+
             console.log(students);
+            localStorage.setItem(
+                "username",
+                document.getElementById("username").value
+            );
+            document.querySelector("div.main").style.display = "block";
+            document.querySelector("div.sign").style.display = "none";
         } else if (
-            document.getElementById("password").value !=
+            document.getElementById("password").value !==
             Object.values(users)[x]["password"]
         ) {
             window.location.reload(true);
@@ -43,7 +48,7 @@ const submitHandler = (e) => {
 
 function SignIn() {
     return (
-        <div className="main">
+        <div className="sign">
             <form action="">
                 <label htmlFor="username">Enter your usename: </label>
                 <input type="text" id="username" />
