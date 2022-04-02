@@ -1,7 +1,7 @@
 import "./App.css";
 import SignIn from "./components/SignUp/Sign";
 
-function App() {
+function App(e) {
     return (
         <div className="App">
             <SignIn />

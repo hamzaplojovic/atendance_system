@@ -1,8 +1,10 @@
 import React from "react";
 import "./Sign.css";
+import file from "./FIle";
 
 const submitHandler = (e) => {
     e.preventDefault();
+    var students = [];
     var users = {
         user1: { username: "hamzaplojovic", password: "admin" },
         user2: { username: "hanaplojovic", password: "admin" },
@@ -15,9 +17,26 @@ const submitHandler = (e) => {
             document.getElementById("password").value ===
                 Object.values(users)[x]["password"]
         ) {
-            window.open("https://google.com");
-        } else {
-            document.location.reload(true);
+            localStorage.setItem(
+                "user",
+                document.getElementById("username").value
+            );
+            console.clear();
+            for (const key in file.data["users"][
+                document.getElementById("username").value
+            ]) {
+                students.push(
+                    file.data["users"][
+                        document.getElementById("username").value
+                    ][key]
+                );
+            }
+            console.log(students);
+        } else if (
+            document.getElementById("password").value !=
+            Object.values(users)[x]["password"]
+        ) {
+            window.location.reload(true);
         }
     }
 };
