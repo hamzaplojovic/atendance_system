@@ -7,10 +7,15 @@ const Divs = () => {
         string = string + x;
     }
     for (let index = 0; index < string.split(",").length; index++) {
-        var heading = document
+        var studentCheck = document
             .getElementById("main")
-            .appendChild(document.createElement("h1"));
+            .appendChild(document.createElement("div"));
+        studentCheck.setAttribute("class", "check");
+        var heading = studentCheck.appendChild(document.createElement("h2"));
         heading.innerText = string.split(",")[index];
+        var check = studentCheck.appendChild(document.createElement("input"));
+        check.setAttribute("type", "checkbox");
+        check.setAttribute("class", "checkbox");
     }
     document.getElementById("button").style.display = "none";
 };

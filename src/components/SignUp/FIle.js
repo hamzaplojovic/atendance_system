@@ -4,6 +4,9 @@ var stockData = {
             student0: "Kadir",
             student1: "Halid",
             student2: "Hafsa",
+            student3: "Kadir",
+            student4: "Halid",
+            student5: "Hafsa",
         },
         hanaplojovic: {
             student0: "siajsa",
